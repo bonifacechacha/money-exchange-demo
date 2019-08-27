@@ -12,13 +12,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
 
 @WebServlet("/money-exchange/*")
 public class MoneyExchangeServlet extends HttpServlet {
 
     private Gson gson;
-    private MockExchangeService exchangeService;
+    private ExchangeService exchangeService;
 
 
     public static final String DEFAULT_DATE_FORMAT = "dd-MM-yyyy";
@@ -28,7 +27,7 @@ public class MoneyExchangeServlet extends HttpServlet {
         super();
 
         gson = new Gson();
-        exchangeService = new MockExchangeService();
+        exchangeService = new ExchangeService();
     }
 
     private void sendAsJson(

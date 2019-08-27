@@ -4,8 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
-public class MockExchangeService {
+public class ExchangeService {
     public Object findCurrencies() {
+
+        //TODO CORRECT THIS METHOD
         HashMap<String,String> currencies = new HashMap<>();
 
         currencies.put("USD","United States Dollar");
@@ -15,6 +17,8 @@ public class MockExchangeService {
     }
 
     public Object calculateRates(LocalDate date, String baseCurrency) {
+
+        //TODO CORRECT THIS METHOD
         HashMap<String,Double> rates = new HashMap<>();
 
         rates.put("USD",1.00);
