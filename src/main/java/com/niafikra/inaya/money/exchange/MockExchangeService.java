@@ -1,6 +1,10 @@
 package com.niafikra.inaya.money.exchange;
 
+import java.awt.geom.RectangularShape;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.HashMap;
 
 public class MockExchangeService {
@@ -19,6 +23,12 @@ public class MockExchangeService {
         rates.put("USD",1.00);
         rates.put("TZS",2230.00);
 
-        return rates;
+        HashMap result = new HashMap();
+        result.put("date",date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+        result.put("timestamp", System.currentTimeMillis());
+        result.put("base",baseCurrency);
+        result.put("rates",rates);
+
+        return result;
     }
 }
